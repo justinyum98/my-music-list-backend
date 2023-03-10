@@ -13,6 +13,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Deploy to Dev
-        run: flyctl deploy --remote-only --config ./fly.dev.toml
+        run: flyctl deploy --remote-only --config ./fly.dev.toml --dockerfile ./Dockerfile.dev
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

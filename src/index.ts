@@ -1,10 +1,6 @@
-import express from 'express';
-const app = express();
-const port = 8080;
+import app from './app';
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+const port = 8080;
 
 app.listen(port, () => {
   // TODO: Add `winston` logging framework, replace below

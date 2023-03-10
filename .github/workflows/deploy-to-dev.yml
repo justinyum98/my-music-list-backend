@@ -1,9 +1,9 @@
-name: Deploy to prod
+name: Deploy to dev
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - name: Deploy to Production
-        run: flyctl deploy --remote-only --config ./fly.prod.toml
+      - name: Deploy to Dev
+        run: flyctl deploy --remote-only --config ./fly.dev.toml
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
